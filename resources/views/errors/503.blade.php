@@ -48,7 +48,7 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title">
-            Be right back.
+            Be right back. be patience.
         </div>
     </div>
 </div>
