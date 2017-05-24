@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('user/{id}', 'UserController@show');
+
+//Route::resource('photos', 'PhotoController');
+
+Route::resource('photo', 'PhotoController', ['only' => [
+    'index', 'show'
+]]);
