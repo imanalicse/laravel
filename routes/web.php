@@ -12,13 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    //return view('greeting', ['name' => 'James']);
+    return view('greeting')->with('name', array('Victoria'));
 });
 
-Route::get('user/{id}', 'UserController@show');
+/*Route::get('user/{id}', 'UserController@show');
 
-//Route::resource('photos', 'PhotoController');
+Route::resource('photos', 'PhotoController');
 
 Route::resource('photo', 'PhotoController', ['only' => [
     'index', 'show'
-]]);
+]]);*/
+
+Route::get('blade', function () {
+    return view('layouts.child');
+});
