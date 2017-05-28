@@ -14,7 +14,6 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        echo 'Index';
         //
     }
 
@@ -25,7 +24,6 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        echo 'Create';
         //
     }
 
@@ -48,8 +46,6 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        echo 'Show';
-        die();
         //
     }
 
