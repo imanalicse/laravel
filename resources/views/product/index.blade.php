@@ -2,12 +2,6 @@
 
 @section('content')
 
-    <?php
-   /* echo '<pre>';
-    print_r($products);
-    echo '</pre>';
-    die();*/
-    ?>
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -35,17 +29,12 @@
         </tr>
         @foreach ($products as $key => $item)
 
-            <?php
-            /*echo '<pre>';
-            print_r($item);
-            echo '</pre>';*/
-            ?>
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->description }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('itemCRUD.show',$item->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('product.show',$item->id) }}">Show</a>
                     <a class="btn btn-primary" href="{{ route('itemCRUD.edit',$item->id) }}">Edit</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['itemCRUD.destroy', $item->id],'style'=>'display:inline']) !!}
                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
