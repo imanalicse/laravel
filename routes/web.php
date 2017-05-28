@@ -28,3 +28,5 @@ Route::resource('photo', 'PhotoController', ['only' => [
 Route::get('blade', function () {
     return view('layouts.child');
 });
+
+Route::resource('itemCRUD','ItemCRUDController');
