@@ -3,10 +3,10 @@
 @section('content')
 
     <?php
-    echo '<pre>';
+   /* echo '<pre>';
     print_r($products);
     echo '</pre>';
-    die();
+    die();*/
     ?>
 
     <div class="row">
@@ -28,14 +28,20 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
+            <th>Id</th>
             <th>Title</th>
             <th>Description</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($items as $key => $item)
+        @foreach ($products as $key => $item)
+
+            <?php
+            /*echo '<pre>';
+            print_r($item);
+            echo '</pre>';*/
+            ?>
             <tr>
-                <td>{{ ++$i }}</td>
+                <td>{{ $item->id }}</td>
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->description }}</td>
                 <td>
@@ -49,6 +55,6 @@
         @endforeach
     </table>
 
-    {!! $items->render() !!}
+    {!! $products->render() !!}
 
 @endsection
