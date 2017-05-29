@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    Product List
+@endsection
+
 @section('content')
 
 

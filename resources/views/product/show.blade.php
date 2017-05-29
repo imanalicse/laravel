@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+    Product Detail
+@endsection
+
 @section('content')
 
     <div class="row">

@@ -1,6 +1,6 @@
 Resource controller:
 
-php artisan make:controller EventController --resource
+php artisan make:controller OrderController --resource
 
 https://laravel.com/docs/5.4/migrations
 php artisan make:migration create_products_table
