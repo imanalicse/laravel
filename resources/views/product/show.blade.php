@@ -16,11 +16,6 @@
             </div>
         </div>
     </div>
-    <?php
-    /*echo '<pre>';
-    print_r($product);
-    echo '</pre>';*/
-    ?>
 
     <div class="row">
 
