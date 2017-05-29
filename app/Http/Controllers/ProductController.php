@@ -49,9 +49,6 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')
             ->with('success','Product created successfully');
-        /*echo '<pre>';
-        print_r($request->all());
-        echo '</pre>';*/
     }
 
     /**
@@ -76,7 +73,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('product.edit',compact('product'));
     }
 
     /**
@@ -88,7 +86,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        Product::find($id)->update($request->all());
+
+        return redirect()->route('products.index')
+            ->with('success','Product updated successfully');
     }
 
     /**
@@ -99,6 +105,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Product::find($id)->delete();
+        return redirect()->route('products.index')
+            ->with('success','Product deleted successfully');
     }
 }
