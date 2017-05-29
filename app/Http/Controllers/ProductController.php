@@ -16,7 +16,8 @@ class ProductController extends Controller
     public function index()
     {
         //$products = DB::table('products')->get();
-        $products = DB::table('products')->paginate(5);
+        $products = DB::table('products')->orderBy('id','DESC')->paginate(5);
+        //$products = Product::orderBy('id','DESC')->paginate(5);
 
         return view('product.index', ['products' => $products]);
         //
@@ -29,7 +30,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+       return view('product.create');
     }
 
     /**
@@ -40,7 +41,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        Product::create($request->all());
+
+        return redirect()->route('products.index')
+            ->with('success','Product created successfully');
+        /*echo '<pre>';
+        print_r($request->all());
+        echo '</pre>';*/
     }
 
     /**
@@ -51,7 +62,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = DB::table('products')->where('id', $id)->first();
+        //$product = DB::table('products')->where('id', $id)->first();
         
         $product = Product::find($id);
         return view('product.show', compact('product'));
