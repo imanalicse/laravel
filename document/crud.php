@@ -5,7 +5,8 @@ php artisan make:controller OrderController --resource
 https://laravel.com/docs/5.4/migrations
 php artisan make:migration create_products_table
 
-php artisan make:migration create_products_table --create=products
+php artisan make:model User
+
 
 /*
 composer dump-autoload
