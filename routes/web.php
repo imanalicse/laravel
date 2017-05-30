@@ -12,22 +12,13 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    //return view('greeting', ['name' => 'James']);
-    return view('greeting')->with('name', array('Victoria'));
+    return view('welcome');
+    //return view('greeting')->with('name', array('Victoria'));
 });
 
-/*Route::get('user/{id}', 'UserController@show');
-
-Route::resource('photos', 'PhotoController');
-
-Route::resource('photo', 'PhotoController', ['only' => [
-    'index', 'show'
-]]);*/
-
-Route::get('blade', function () {
-    return view('layouts.child');
-});
 
 Route::resource('itemCRUD','ItemCRUDController');
 Route::resource('products','ProductController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
